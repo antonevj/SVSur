@@ -13,54 +13,67 @@
     {
         @Html.HiddenFor(model => model.ClienteID)
     }
+
     <div class="row">
+
         <div class="form-group col-sm-4">
             <label class="control-label">Nombre </label>
             @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Nombre);
+            @Html.ValidationMessageFor(model => model.Nombre)
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-sm-4">
+
+        <div class="form-group col-sm-6">
             <label class="control-label">Apellido </label>
             @Html.TextBoxFor(model => model.Apellido, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Apellido);
+            @Html.ValidationMessageFor(model => model.Apellido)
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-sm-4">
+
+        <div class="form-group col-sm-2">
             <label class="control-label">DNI </label>
             @Html.TextBoxFor(model => model.DNI, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.DNI);
+            @Html.ValidationMessageFor(model => model.DNI)
         </div>
+
+
+       
     </div>
+
     <div class="row">
         <div class="form-group col-sm-4">
             <label class="control-label">Edad </label>
             @Html.TextBoxFor(model => model.Edad, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Edad);
+            @Html.ValidationMessageFor(model => model.Edad)
         </div>
-    </div>
-    <div class="row">
+
         <div class="form-group col-sm-4">
             <label class="control-label">Sexo </label>
             @Html.TextBoxFor(model => model.Sexo, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Sexo);
+            @Html.ValidationMessageFor(model => model.Sexo)
         </div>
-    </div>
-    <div class="row">
+
+        @*<div class="col-sm-6">
+            <div class="form-group">
+                <label for="miselect">Sexo </label>
+                @Html.DropDownListFor(model => model.Sexo, (IEnumerable<SelectListItem>)ViewBag.Categ, new { @class = "form-control" }) {
+                new SelectListItem { Text="Masculino", Value="1" },
+                new SelectListItem { Text="Femenino",  Value="2" },
+                }, "Seleccione un sexo", new { @class = "form-control", id = "select_combos1" })
+            </div>
+        </div>*@
         <div class="form-group col-sm-4">
             <label class="control-label">Estado </label>
             @Html.CheckBoxFor(model => model.Estado, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Estado);
+            @Html.ValidationMessageFor(model => model.Estado)
         </div>
+
     </div>
+
     <div class="row">
         <div class="col-md-8">
             <button type="submit" class="btn btn-primary form-control">Guardar </button>
         </div>
         <div class="col-sm-4">
-            <a href="#" class="btn btn-danger form-control">Cancelar</a> 
+            <a href="#" class="btn btn-danger form-control">Cancelar</a>
         </div>
 
     </div>

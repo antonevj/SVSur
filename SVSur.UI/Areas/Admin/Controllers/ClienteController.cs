@@ -21,8 +21,8 @@ namespace SVSur.UI.Areas.Admin.Controllers
         public ActionResult Insertar()
         {
             ViewBag.op = CRUD.Insertar.ToString();
-            return View("Formulario", new Cliente());
-
+            return View("Formulario", new Cliente());  
+            
         }
         [HttpPost]
         public ActionResult Insertar(Cliente obj)
@@ -36,6 +36,7 @@ namespace SVSur.UI.Areas.Admin.Controllers
             {
                 return View("Formulario", obj);
             }
+       
         }
         [HttpGet]
         public ActionResult Modificar(int id)

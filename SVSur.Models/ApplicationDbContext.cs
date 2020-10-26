@@ -16,10 +16,11 @@ namespace SVSur.Models
             : base("name=miCadena", throwIfV1Schema: false)
         {
             Database.SetInitializer(
-         new MigrateDatabaseToLatestVersion<ApplicationDbContext, Migrations.Configuration>("miCadena"));
+     new MigrateDatabaseToLatestVersion<ApplicationDbContext, Migrations.Configuration>("miCadena"));
 
         }
         public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Bus> Buses { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

@@ -55,11 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Domain\Bus.cs" />
     <Compile Include="Domain\Cliente.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
-    <Compile Include="Migrations\202010190648466_Inicio.cs" />
-    <Compile Include="Migrations\202010190648466_Inicio.Designer.cs">
-      <DependentUpon>202010190648466_Inicio.cs</DependentUpon>
+    <Compile Include="Migrations\202010262241100_update-database.cs" />
+    <Compile Include="Migrations\202010262241100_update-database.Designer.cs">
+      <DependentUpon>202010262241100_update-database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,11 +79,6 @@
     <None Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202010190648466_Inicio.resx">
-      <DependentUpon>202010190648466_Inicio.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -93,6 +89,11 @@
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202010262241100_update-database.resx">
+      <DependentUpon>202010262241100_update-database.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

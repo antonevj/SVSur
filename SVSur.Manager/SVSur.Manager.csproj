@@ -54,7 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusManager.cs" />
     <Compile Include="ClienteManager.cs" />
+    <Compile Include="Contracts\IBusManager.cs" />
     <Compile Include="Contracts\IClienteManager.cs" />
     <Compile Include="Contracts\ICrud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

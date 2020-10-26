@@ -8,26 +8,26 @@ using System.Linq;
 
 namespace SVSur.Manager
 {
-    public class ClienteManager : IClienteManager
+    public class BusManager : IBusManager
     {
-        public IEnumerable<Cliente> GetAll(bool status)
+        public IEnumerable<Bus> GetAll(bool status)
         {
             using (var context = new ApplicationDbContext())
             {
-                var lista = context.Clientes.ToList();
+                var lista = context.Buses.ToList();
                 return lista;
             }
         }
 
-        public Cliente Get(int id)
+        public Bus Get(int id)
         {
             using (var context = new ApplicationDbContext())
             {
-                return context.Clientes.Where(K => K.ClienteID == id).SingleOrDefault();
+                return context.Buses.Where(K => K.BusID == id).SingleOrDefault();
             }
         }
 
-        public int Insert(Cliente obj)
+        public int Insert(Bus obj)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -36,7 +36,7 @@ namespace SVSur.Manager
             }
         }
 
-        public int Update(Cliente obj)
+        public int Update(Bus obj)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -49,12 +49,11 @@ namespace SVSur.Manager
         {
             using (var context = new ApplicationDbContext())
             {
-                Cliente obj = context.Clientes.Find(id);
+                Bus obj = context.Buses.Find(id);
                 context.Entry(obj).State = EntityState.Deleted;
                 return context.SaveChanges();
             }
         }
 
-  
     }
 }

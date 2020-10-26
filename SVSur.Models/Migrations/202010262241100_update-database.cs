@@ -3,10 +3,27 @@ namespace SVSur.Models.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Inicio : DbMigration
+    public partial class updatedatabase : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Buses",
+                c => new
+                    {
+                        BusID = c.Int(nullable: false, identity: true),
+                        Modelo = c.String(nullable: false, maxLength: 50),
+                        NLlantas = c.Int(nullable: false),
+                        Chasis = c.String(nullable: false),
+                        AñoFabricacion = c.DateTime(nullable: false),
+                        Combustible = c.String(nullable: false, maxLength: 20),
+                        Rutina = c.String(nullable: false, maxLength: 20),
+                        PlacaBus = c.String(nullable: false, maxLength: 8),
+                        CapacidadBus = c.Int(nullable: false),
+                        Estado = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.BusID);
+            
             CreateTable(
                 "dbo.Clientes",
                 c => new
@@ -109,6 +126,7 @@ namespace SVSur.Models.Migrations
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.Clientes");
+            DropTable("dbo.Buses");
         }
     }
 }

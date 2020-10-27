@@ -27,7 +27,7 @@ namespace SVSur.UI.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Insertar(Bus obj)
         {
-            obj.AñoFabricacion = DateTime.Now.Date;
+           // obj.AñoFabricacion = DateTime.Now.Date;
             if (ModelState.IsValid)
             {
                 int rpta = new BusManager().Insert(obj);

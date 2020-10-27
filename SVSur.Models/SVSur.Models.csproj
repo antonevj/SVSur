@@ -56,11 +56,13 @@
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Domain\Bus.cs" />
+    <Compile Include="Domain\Chofer.cs" />
     <Compile Include="Domain\Cliente.cs" />
+    <Compile Include="DTO\ChoferDTO.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
-    <Compile Include="Migrations\202010262241100_update-database.cs" />
-    <Compile Include="Migrations\202010262241100_update-database.Designer.cs">
-      <DependentUpon>202010262241100_update-database.cs</DependentUpon>
+    <Compile Include="Migrations\202010271546354_update_database.cs" />
+    <Compile Include="Migrations\202010271546354_update_database.Designer.cs">
+      <DependentUpon>202010271546354_update_database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,8 +93,8 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202010262241100_update-database.resx">
-      <DependentUpon>202010262241100_update-database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010271546354_update_database.resx">
+      <DependentUpon>202010271546354_update_database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
 ﻿using SVSur.Models.Domain;
+using SVSur.Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace SVSur.Manager.Contracts
 {
-    public interface IBusManager : ICrud<Bus>
+  public  interface IChoferManager: ICrud<Chofer>
     {
-        //colocar funcionalidades especificas
 
-        IEnumerable<Bus> GetAllSimple();
+        //Funcionalidades especificas
+        IEnumerable<ChoferDTO> GetAllDTO(bool status);
     }
 }

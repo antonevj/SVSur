@@ -3,7 +3,7 @@ namespace SVSur.Models.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class updatedatabase : DbMigration
+    public partial class update_database : DbMigration
     {
         public override void Up()
         {
@@ -15,7 +15,7 @@ namespace SVSur.Models.Migrations
                         Modelo = c.String(nullable: false, maxLength: 50),
                         NLlantas = c.Int(nullable: false),
                         Chasis = c.String(nullable: false),
-                        AñoFabricacion = c.DateTime(nullable: false),
+                        AñoFabricacion = c.Int(nullable: false),
                         Combustible = c.String(nullable: false, maxLength: 20),
                         Rutina = c.String(nullable: false, maxLength: 20),
                         PlacaBus = c.String(nullable: false, maxLength: 8),
@@ -25,7 +25,24 @@ namespace SVSur.Models.Migrations
                 .PrimaryKey(t => t.BusID);
             
             CreateTable(
-                "dbo.Clientes",
+                "dbo.Choferes",
+                c => new
+                    {
+                        ChoferID = c.Int(nullable: false, identity: true),
+                        BusID = c.Int(nullable: false),
+                        Nombre = c.String(nullable: false, maxLength: 50),
+                        Apellidos = c.String(nullable: false, maxLength: 100),
+                        Sexo = c.String(nullable: false, maxLength: 20),
+                        Edad = c.Int(nullable: false),
+                        DNI = c.Int(nullable: false),
+                        Estado = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ChoferID)
+                .ForeignKey("dbo.Buses", t => t.BusID, cascadeDelete: true)
+                .Index(t => t.BusID);
+            
+            CreateTable(
+                "dbo.clientes",
                 c => new
                     {
                         ClienteID = c.Int(nullable: false, identity: true),
@@ -114,18 +131,21 @@ namespace SVSur.Models.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Choferes", "BusID", "dbo.Buses");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Choferes", new[] { "BusID" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.Clientes");
+            DropTable("dbo.clientes");
+            DropTable("dbo.Choferes");
             DropTable("dbo.Buses");
         }
     }

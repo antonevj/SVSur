@@ -1,46 +1,63 @@
 ﻿using SVSur.Manager.Contracts;
 using SVSur.Models;
 using SVSur.Models.Domain;
+using SVSur.Models.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SVSur.Manager
 {
-    public class BusManager : IBusManager
+  public  class ChoferManager : IChoferManager
     {
-        public IEnumerable<Bus> GetAll(bool status)
+        public IEnumerable<Chofer> GetAll(bool status)
         {
             using (var context = new ApplicationDbContext())
             {
-                var lista = context.Buses.ToList();
+                var lista = context.Choferes.Include("Categoria").Include("Marca").Where(K => K.Estado == status).ToList();
                 return lista;
             }
         }
-        public IEnumerable<Bus> GetAllSimple()
+
+        public IEnumerable<ChoferDTO> GetAllDTO(bool status)
         {
             using (var context = new ApplicationDbContext())
             {
-                var lista = context.Buses
-                    .Where(K => K.Estado == true)
-                    .Select(K => new { K.BusID, K.PlacaBus }).ToList()
-                    .Select(K => new Bus { BusID = K.BusID, PlacaBus = K.PlacaBus });
+                var lista = context.Choferes
+                    .Where(K => K.Estado == status)
+                    .Select(K => new ChoferDTO
+                    {
 
+                        ChoferID = K.ChoferID,
+                        Nombre = K.Nombre,
+                        Apellidos = K.Apellidos,
+                        Sexo = K.Sexo,
+                        Edad = K.Edad,
+                        DNI = K.DNI,
+                        PlacaBus = K.Bus.PlacaBus,
+                     
+
+
+                    }).ToList();
 
                 return lista;
             }
 
         }
-        public Bus Get(int id)
+
+        public Chofer Get(int id)
         {
             using (var context = new ApplicationDbContext())
             {
-                return context.Buses.Where(K => K.BusID == id).SingleOrDefault();
+                return context.Choferes.Where(k => k.ChoferID == id).SingleOrDefault();
             }
         }
 
-        public int Insert(Bus obj)
+
+        public int Insert(Chofer obj)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -49,7 +66,7 @@ namespace SVSur.Manager
             }
         }
 
-        public int Update(Bus obj)
+        public int Update(Chofer obj)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -62,11 +79,12 @@ namespace SVSur.Manager
         {
             using (var context = new ApplicationDbContext())
             {
-                Bus obj = context.Buses.Find(id);
+                var obj = context.Choferes.Find(id);
                 context.Entry(obj).State = EntityState.Deleted;
                 return context.SaveChanges();
             }
         }
+
 
     }
 }

@@ -21,6 +21,9 @@ namespace SVSur.Models
         }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Bus> Buses { get; set; }
+        public virtual DbSet<Chofer> Choferes { get; set; }
+
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

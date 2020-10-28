@@ -12,6 +12,14 @@ html {
 body {
   margin: 0;
 }
+header{
+    position:fixed;
+
+}
+nav {
+    position: fixed;
+}
+nav
 article,
 aside,
 details,
@@ -25,7 +33,7 @@ menu,
 nav,
 section,
 summary {
-  display: block;
+    display: block;
 }
 audio,
 canvas,

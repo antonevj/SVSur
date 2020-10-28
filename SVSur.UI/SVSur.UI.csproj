@@ -194,7 +194,9 @@
     <Content Include="Assets\css\slick-theme.css" />
     <Content Include="Assets\css\slick.css" />
     <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\img\FACEBOOK.png" />
     <Content Include="Assets\img\hotdeal.png" />
+    <Content Include="Assets\img\INTA.png" />
     <Content Include="Assets\img\logo.png" />
     <Content Include="Assets\img\logo1.png" />
     <Content Include="Assets\img\logo2.png" />
@@ -210,6 +212,7 @@
     <Content Include="Assets\img\shop01.png" />
     <Content Include="Assets\img\shop02.png" />
     <Content Include="Assets\img\shop03.png" />
+    <Content Include="Assets\img\TWITER.png" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\jquery.min.js" />
     <Content Include="Assets\js\jquery.zoom.min.js" />
@@ -220,10 +223,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site - Copy.css" />
+    <Content Include="Content\_Layout.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Assets\fonts\fontawesome-webfont.eot" />

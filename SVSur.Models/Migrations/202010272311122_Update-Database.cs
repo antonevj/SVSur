@@ -3,7 +3,7 @@ namespace SVSur.Models.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class update_database : DbMigration
+    public partial class UpdateDatabase : DbMigration
     {
         public override void Up()
         {
@@ -79,6 +79,24 @@ namespace SVSur.Models.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
+                "dbo.Rutas",
+                c => new
+                    {
+                        RutaID = c.Int(nullable: false, identity: true),
+                        ChoferID = c.Int(nullable: false),
+                        CiudadOrigen = c.String(nullable: false, maxLength: 100),
+                        CiudadDestino = c.String(nullable: false, maxLength: 100),
+                        Precio = c.Single(nullable: false),
+                        Duracion = c.DateTime(nullable: false),
+                        FechaViaje = c.DateTime(nullable: false),
+                        HoraSalida = c.DateTime(nullable: false),
+                        Estado = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.RutaID)
+                .ForeignKey("dbo.Choferes", t => t.ChoferID, cascadeDelete: true)
+                .Index(t => t.ChoferID);
+            
+            CreateTable(
                 "dbo.AspNetUsers",
                 c => new
                     {
@@ -130,11 +148,13 @@ namespace SVSur.Models.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Rutas", "ChoferID", "dbo.Choferes");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Choferes", "BusID", "dbo.Buses");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("dbo.Rutas", new[] { "ChoferID" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
@@ -142,6 +162,7 @@ namespace SVSur.Models.Migrations
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.Rutas");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.clientes");

@@ -1,0 +1,96 @@
+﻿@model SVSur.Models.Domain.Ruta
+@{
+    ViewBag.Title = "Formulario";
+}
+
+
+<h2>RUTA-DETALLES</h2>
+
+@using (Html.BeginForm((string)ViewBag.op, "Ruta", FormMethod.Post))
+{
+    <!--seguridad de los datos-->
+    @Html.AntiForgeryToken()
+
+    if (Model != null)
+    {
+        @Html.HiddenFor(model => model.RutaID)
+    }
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="CiudadOrigen" class="control-label">Ciudad Origen: </label>
+            @Html.TextBoxFor(model => model.CiudadOrigen, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CiudadOrigen, null, new { @class = "badge badge-danger" })
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="CiudadDestino" class="control-label">Ciudad Destino: </label>
+            @Html.TextBoxFor(model => model.CiudadDestino, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CiudadDestino, null, new { @class = "badge badge-danger" })
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <div class="form-group">
+            <label for="Precio" class="control-label">precio: </label>
+            @Html.TextBoxFor(model => model.Precio, new { @class = "form-control", Type = "number", step = "0,1" })
+            @Html.ValidationMessageFor(model => model.Precio, null, new { @class = "badge badge-danger" })
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <div class="form-group">
+            <label for="Estado" class="control-label">Activo: </label>
+            @Html.CheckBoxFor(model => model.Estado, new { @class = "form-control", @checked = "checked" })
+            @Html.ValidationMessageFor(model => model.Estado, null, new { @class = "badge badge-danger" })
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="Duracion" class="control-label">Duracion: </label>
+                @Html.TextBoxFor(model => model.Duracion, new { @class = "form-control", @Value = Model.Duracion.ToString("H:mm") })
+                @Html.ValidationMessageFor(model => model.Duracion, null, new { @class = "badge badge-danger" })
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="FechaViaje" class="control-label">Fecha Viaje: </label>
+                @Html.TextBoxFor(model => model.FechaViaje, new { @class = "form-control", @Value = Model.FechaViaje.ToString("yyyy/MM/dd") })
+                @Html.ValidationMessageFor(model => model.FechaViaje, null, new { @class = "badge badge-danger" })
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="HoraSalida" class="control-label">Hora Salida: </label>
+                @Html.TextBoxFor(model => model.HoraSalida, new { @class = "form-control", @Value = Model.HoraSalida.ToString("H:mm") })
+                @Html.ValidationMessageFor(model => model.HoraSalida, null, new { @class = "badge badge-danger" })
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="ChoferID" class="control-label">ChoferID: </label>
+                @Html.DropDownListFor(model => model.ChoferID, (IEnumerable<SelectListItem>)ViewBag.chofer, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ChoferID, null, new { @class = "badge badge-danger" })
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-primary form-control">Guardar </button>
+        </div>
+        <div class="col-sm-4">
+            <a href="~/admin/ruta/Index" class="btn btn-danger form-control">Cancelar</a>
+        </div>
+
+    </div>
+
+}
+

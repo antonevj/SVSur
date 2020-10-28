@@ -7,39 +7,38 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SVSur.Manager
 {
-  public  class ChoferManager : IChoferManager
+    public class RutaManager : IRutaManager
     {
-        public IEnumerable<Chofer> GetAll(bool status)
+
+        public IEnumerable<Ruta> GetAll(bool status)
         {
             using (var context = new ApplicationDbContext())
             {
-                var lista = context.Choferes.Include("Bus").Where(K => K.Estado == status).ToList();
+                var lista = context.Rutas.Include("Chofer").Where(K => K.Estado == status).ToList();
                 return lista;
             }
         }
 
-        public IEnumerable<ChoferDTO> GetAllDTO(bool status)
+        public IEnumerable<RutaDTO> GetAllDTO(bool status)
         {
             using (var context = new ApplicationDbContext())
             {
-                var lista = context.Choferes
+                var lista = context.Rutas
                     .Where(K => K.Estado == status)
-                    .Select(K => new ChoferDTO
+                    .Select(K => new RutaDTO
                     {
 
-                        ChoferID = K.ChoferID,
-                        Nombre = K.Nombre,
-                        Apellidos = K.Apellidos,
-                        Sexo = K.Sexo,
-                        Edad = K.Edad,
-                        DNI = K.DNI,
-                        PlacaBus = K.Bus.PlacaBus,
-                     
+                        RutaID = K.RutaID,
+                        CiudadOrigen = K.CiudadOrigen,
+                        Ciudaddestino = K.CiudadDestino,
+                        Precio = K.Precio,
+                        Duracion = K.Duracion,
+                        FechaViaje = K.FechaViaje,
+                        HoraSalida = K.HoraSalida,
+                        Nombre = K.Chofer.Nombre,
 
 
                     }).ToList();
@@ -49,16 +48,16 @@ namespace SVSur.Manager
 
         }
 
-        public Chofer Get(int id)
+        public Ruta Get(int id)
         {
             using (var context = new ApplicationDbContext())
             {
-                return context.Choferes.Where(k => k.ChoferID == id).SingleOrDefault();
+                return context.Rutas.Where(k => k.RutaID == id).SingleOrDefault();
             }
         }
 
 
-        public int Insert(Chofer obj)
+        public int Insert(Ruta obj)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -67,7 +66,7 @@ namespace SVSur.Manager
             }
         }
 
-        public int Update(Chofer obj)
+        public int Update(Ruta obj)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -76,33 +75,20 @@ namespace SVSur.Manager
             }
         }
 
-        public IEnumerable<Chofer> GetAllSimple()
+        public IEnumerable GetAllSimple()
         {
-
-            using (var context = new ApplicationDbContext())
-            {
-                var lista = context.Choferes
-                    .Where(K => K.Estado == true)
-                    .Select(K => new { K.ChoferID, K. Nombre }).ToList()
-                    .Select(K => new Chofer { ChoferID = K.ChoferID, Nombre = K.Nombre });
-
-
-                return lista;
-            }
-
-
+            throw new NotImplementedException();
         }
 
         public int Delete(int id)
         {
             using (var context = new ApplicationDbContext())
             {
-                var obj = context.Choferes.Find(id);
+                var obj = context.Rutas.Find(id);
                 context.Entry(obj).State = EntityState.Deleted;
                 return context.SaveChanges();
             }
         }
-
 
     }
 }

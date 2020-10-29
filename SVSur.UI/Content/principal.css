@@ -1,0 +1,29 @@
+﻿body {
+}
+
+h1 {
+
+    text-align:center;
+}
+
+.banner-1 {
+    margin-top: 40px;
+    background: url(piura.jpg );
+    float: left;
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat; /* No se repetira */
+    background-size: cover; /* Imagen al 100% del ancho */
+    background-attachment: fixed; /* Posicion fija para la imagen */
+    text-align: center;
+    border-spacing: 10px 5px 20px 20px;
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    padding-top: 20px;
+    font-weight: normal;
+    color: #777;
+}

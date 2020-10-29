@@ -7,13 +7,13 @@ namespace SVSur.Models.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class UpdateDatabase : IMigrationMetadata
+    public sealed partial class general : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(general));
         
         string IMigrationMetadata.Id
         {
-            get { return "202010272311122_Update-Database"; }
+            get { return "202010290333069_general"; }
         }
         
         string IMigrationMetadata.Source

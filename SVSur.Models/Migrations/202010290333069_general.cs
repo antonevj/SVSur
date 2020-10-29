@@ -3,7 +3,7 @@ namespace SVSur.Models.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class UpdateDatabase : DbMigration
+    public partial class general : DbMigration
     {
         public override void Up()
         {

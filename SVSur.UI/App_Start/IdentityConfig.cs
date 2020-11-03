@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -20,8 +22,31 @@ namespace SVSur.UI
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("yanetmayo17@hotmail.com", "Mexsana_17");
+                smtp.EnableSsl = true;
+                smtp.Port = 587;
+                smtp.Host = "smtp-mail.outlook.com";
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+            try
+            {
+                MailMessage mail = new MailMessage("yanetmayo17@hotmail.com", message.Destination.Trim());
+                mail.Subject = message.Subject;
+                mail.Body = message.Body;
+                mail.IsBodyHtml = true;
+                smtp.Send(mail);
+                return Task.FromResult(0);
+            }
+            catch (Exception)
+            {
+            
+                throw;
+            }
+  
         }
     }
 
@@ -56,10 +81,10 @@ namespace SVSur.UI
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
+                RequireNonLetterOrDigit = false,
+                RequireDigit = false,
+                RequireLowercase = false,
+                RequireUppercase = false,
             };
 
             // Configure user lockout defaults
@@ -106,6 +131,20 @@ namespace SVSur.UI
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+        }
+    }
+
+    // Configure the RoleManager used in the application. RoleManager is defined in the ASP.NET Identity core assembly
+    public class ApplicationRoleManager : RoleManager<IdentityRole>
+    {
+        public ApplicationRoleManager(IRoleStore<IdentityRole, string> roleStore)
+            : base(roleStore)
+        {
+        }
+
+        public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
+        {
+            return new ApplicationRoleManager(new RoleStore<IdentityRole>(context.Get<ApplicationDbContext>()));
         }
     }
 }

@@ -62,9 +62,9 @@
     <Compile Include="DTO\ChoferDTO.cs" />
     <Compile Include="DTO\RutaDTO.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
-    <Compile Include="Migrations\202010290333069_general.cs" />
-    <Compile Include="Migrations\202010290333069_general.Designer.cs">
-      <DependentUpon>202010290333069_general.cs</DependentUpon>
+    <Compile Include="Migrations\202011031956494_Inicio.cs" />
+    <Compile Include="Migrations\202011031956494_Inicio.Designer.cs">
+      <DependentUpon>202011031956494_Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,8 +95,8 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202010290333069_general.resx">
-      <DependentUpon>202010290333069_general.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011031956494_Inicio.resx">
+      <DependentUpon>202011031956494_Inicio.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

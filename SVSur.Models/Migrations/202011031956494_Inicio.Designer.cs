@@ -7,13 +7,13 @@ namespace SVSur.Models.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class general : IMigrationMetadata
+    public sealed partial class Inicio : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(general));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Inicio));
         
         string IMigrationMetadata.Id
         {
-            get { return "202010290333069_general"; }
+            get { return "202011031956494_Inicio"; }
         }
         
         string IMigrationMetadata.Source

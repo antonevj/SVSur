@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
 
 
 <html>
@@ -28,7 +29,7 @@
                     <li><a href="~/admin/cliente/Index" target="_blank">CLIENTE</a></li>
                     <li><a href="~/admin/bus/Index" target="_blank">BUSES</a></li>
                     <li><a href="~/admin/chofer/Index" target="_blank">CHOFERES</a></li>
-                    <li><a href="~/admin/ruta/idex" target="_blank">RUTAS</a></li>
+                    <li><a href="~/admin/ruta/Index" target="_blank">RUTAS</a></li>
 
 
 
@@ -37,7 +38,7 @@
 
 
             <div class="login">
-                <p><a href="~/Assets/img/user.png"><img src="~/Assets/img/user.png" height="50" width="50" alt="Alternate Text" />Mi Cuenta</a></p>
+                <p><a href=""><img src="~/Assets/img/user.png" height="50" width="50" alt="Alternate Text" />@(Request.IsAuthenticated ? @User.Identity.GetUserName() : "Mi cuenta") </a></p>
             </div>
         </div>
 
@@ -66,17 +67,17 @@
     <br />
 
     @*<div class="ancho-letras">
-        <div class="letras-slider">
-            <h1 class="animated zoomIn">USO DEL FRAMEWORK MVC</h1>
-            <p class="animated slideInUp">En líneas generales, MVC es una propuesta de arquitectura del software utilizada para separar el código por sus distintas responsabilidades, manteniendo distintas capas que se encargan de hacer una tarea muy concreta, lo que ofrece beneficios diversos.</p>
+            <div class="letras-slider">
+                <h1 class="animated zoomIn">USO DEL FRAMEWORK MVC</h1>
+                <p class="animated slideInUp">En líneas generales, MVC es una propuesta de arquitectura del software utilizada para separar el código por sus distintas responsabilidades, manteniendo distintas capas que se encargan de hacer una tarea muy concreta, lo que ofrece beneficios diversos.</p>
+            </div>
         </div>
-    </div>
-    <div class="cuerpo">
-        <img src="~/Content/fondo.jpg" width="1200" height="720" alt="Alternate Text" />
-    </div>*@
+        <div class="cuerpo">
+            <img src="~/Content/fondo.jpg" width="1200" height="720" alt="Alternate Text" />
+        </div>*@
 
-<img src="~/Content/fondo.jpg" width="1350" alt="Alternate Text"  />
-<br />
+    <img src="~/Content/fondo.jpg" width="1350" alt="Alternate Text" />
+    <br />
 
     <footer>
 

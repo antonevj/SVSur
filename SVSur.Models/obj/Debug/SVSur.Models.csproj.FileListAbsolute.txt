@@ -86,8 +86,6 @@ C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.csproj.CoreCompileInputs.cache
 C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.csproj.CopyComplete
 C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.dll
 C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.pdb
-C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.Migrations.UpdateDatabase.resources
-C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.csproj.GenerateResource.cache
 E:\SVSur\SVSur.Models\bin\Debug\SVSur.Models.dll.config
 E:\SVSur\SVSur.Models\bin\Debug\SVSur.Models.dll
 E:\SVSur\SVSur.Models\bin\Debug\SVSur.Models.pdb
@@ -106,3 +104,5 @@ E:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.dll
 E:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.pdb
 E:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.Migrations.general.resources
 E:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.csproj.GenerateResource.cache
+C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.Migrations.Inicio.resources
+C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.csproj.GenerateResource.cache

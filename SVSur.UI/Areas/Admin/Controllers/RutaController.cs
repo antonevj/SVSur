@@ -80,5 +80,18 @@ namespace SVSur.UI.Areas.Admin.Controllers
             int rpta = new RutaManager().Delete(id);
             return RedirectToAction("index");
         }
+
+
+
+        public ActionResult Ver(bool estado = true)
+        {
+            ViewBag.estado = estado;
+            var data = new RutaManager().GetAllDTO(estado);
+            return View(data);
+
+
+        }
+
+
     }
 }

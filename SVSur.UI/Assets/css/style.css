@@ -446,7 +446,8 @@ textarea.input {
 #header {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #15161D;
+  background-color: #2471A3;
+  /*position:fixed;*/
 }
 
 .header-logo {
@@ -482,8 +483,8 @@ textarea.input {
 .header-search form .search-btn {
   height: 40px;
   width: 100px;
-  background: #D10024;
-  color: #FFF;
+  background: #FBFBFC;
+  color: #FBFBFC;
   font-weight: 700;
   border: none;
   border-radius: 0px 40px 40px 0px;
@@ -622,7 +623,7 @@ textarea.input {
 #navigation {
   background: #FFF;
   border-bottom: 2px solid #E4E7ED;
-  border-top: 3px solid #D10024;
+  border-top: 3px solid #ff6a00;
 }
 
 /*----------------------------*\
@@ -2002,12 +2003,12 @@ textarea.input {
 ===========================================================*/
 
 #footer {
-  background: #15161D;
+  background: #2471A3;
   color: #B9BABC;
 }
 
 #bottom-footer {
-  background: #1E1F29;
+  background: #808080;
 }
 
 .footer {

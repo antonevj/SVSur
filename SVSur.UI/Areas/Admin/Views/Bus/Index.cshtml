@@ -53,3 +53,28 @@
 </div>
 
 
+<div class="row">
+    <div class="col-sm-9">
+        <!-- paginacion de datos-->
+    </div>
+    <div class="col-sm-3">
+        <div class="row">
+            <diV class="col-sm-8">
+                <label for="dropdownMenu1" class="control-label">Estado</label>
+            </diV>
+            <div class="col-sm-4">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        @(ViewBag.estado== true ? "Activo": "Inactivo")
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="~/admin/bus/index?estado=true">Activo</a></li>
+                        <li><a href="~/admin/bus/index?estado=false">Inactivo</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

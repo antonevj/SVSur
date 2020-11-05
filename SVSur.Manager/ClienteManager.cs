@@ -14,7 +14,7 @@ namespace SVSur.Manager
         {
             using (var context = new ApplicationDbContext())
             {
-                var lista = context.Clientes.ToList();
+                var lista = context.Clientes.Where(K => K.Estado == status).ToList(); ;
                 return lista;
             }
         }

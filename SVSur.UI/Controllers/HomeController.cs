@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SVSur.Manager;
+using SVSur.Models.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +12,10 @@ namespace SVSur.UI.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            ViewBag.origen = new SelectList(new RutaManager().GetAllSimple(), "RutaID", "CiudadOrigen");
+            ViewBag.destino = new SelectList(new RutaManager().GetAllSimple(), "RutaID", "CiudadDestino");
+            return View("Index", new Ruta());
+
         }
 
         public ActionResult About()

@@ -12,9 +12,10 @@ namespace SVSur.UI.Areas.Admin.Controllers
     public class ClienteController : Controller
     {
         // GET: Admin/Cliente
-        public ActionResult Index()
+        public ActionResult Index(bool estado = true)
         {
-            var data = new ClienteManager().GetAll(true);
+            ViewBag.estado = estado;
+            var data = new ClienteManager().GetAll(estado);
             return View(data);
         }
         [HttpGet]

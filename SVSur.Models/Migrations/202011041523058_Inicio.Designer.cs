@@ -13,7 +13,7 @@ namespace SVSur.Models.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202011031956494_Inicio"; }
+            get { return "202011041523058_Inicio"; }
         }
         
         string IMigrationMetadata.Source

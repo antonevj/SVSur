@@ -13,7 +13,7 @@ namespace SVSur.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("name=miCadena", throwIfV1Schema: false)
+             : base("name=miCadena", throwIfV1Schema: false)
         {
             Database.SetInitializer(
             new MigrateDatabaseToLatestVersion<ApplicationDbContext, Migrations.Configuration>("miCadena"));

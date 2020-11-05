@@ -10,7 +10,7 @@ namespace SVSur.Models.DTO
     {
         public int RutaID { get; set; }
         public string CiudadOrigen { get; set; }
-         public string Ciudaddestino { get; set; }
+        public string Ciudaddestino { get; set; }
         public float Precio { get; set; }
         public DateTime Duracion { get; set; }
         public DateTime FechaViaje { get; set; }

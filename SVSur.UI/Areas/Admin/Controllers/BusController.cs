@@ -12,9 +12,10 @@ namespace SVSur.UI.Areas.Admin.Controllers
     public class BusController : Controller
     {
         // GET: Admin/Bus
-        public ActionResult Index()
+        public ActionResult Index(bool estado = true)
         {
-            var data = new BusManager().GetAll(true);
+            ViewBag.estado = estado;
+            var data = new BusManager().GetAll(estado);
             return View(data);
         }
         [HttpGet]

@@ -77,7 +77,17 @@ namespace SVSur.Manager
 
         public IEnumerable GetAllSimple()
         {
-            throw new NotImplementedException();
+
+            using (var context = new ApplicationDbContext())
+            {
+                var lista = context.Rutas
+                    .Where(K => K.Estado == true)
+                    .Select(K => new { K.RutaID, K.CiudadDestino,K.CiudadOrigen }).ToList()
+                    .Select(K => new Ruta { RutaID = K.RutaID, CiudadDestino = K.CiudadDestino,CiudadOrigen=K.CiudadOrigen });
+
+
+                return lista;
+            }
         }
 
         public int Delete(int id)

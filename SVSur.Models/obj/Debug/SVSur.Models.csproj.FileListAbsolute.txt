@@ -101,8 +101,6 @@ E:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.dll
 E:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.pdb
 E:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.Migrations.general.resources
 E:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.csproj.GenerateResource.cache
-C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.Migrations.Inicio.resources
-C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.csproj.GenerateResource.cache
 C:\Users\ACER\Desktop\SVSur\SVSur.Models\obj\Debug\SVSur.Models.csprojAssemblyReference.cache
 C:\Users\ACER\Desktop\SVSur\SVSur.Models\obj\Debug\SVSur.Models.Migrations.Inicio.resources
 C:\Users\ACER\Desktop\SVSur\SVSur.Models\obj\Debug\SVSur.Models.csproj.GenerateResource.cache
@@ -124,3 +122,5 @@ C:\Users\Yaneth\Source\Repos\antonevj\SVSur\SVSur.Models\obj\Debug\SVSur.Models.
 C:\Users\Yaneth\Source\Repos\antonevj\SVSur\SVSur.Models\obj\Debug\SVSur.Models.pdb
 C:\Users\Yaneth\Source\Repos\antonevj\SVSur\SVSur.Models\obj\Debug\SVSur.Models.Migrations.Inicio.resources
 C:\Users\Yaneth\Source\Repos\antonevj\SVSur\SVSur.Models\obj\Debug\SVSur.Models.csproj.GenerateResource.cache
+C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.Migrations.Inicio.resources
+C:\SVSur\SVSur.Models\obj\Debug\SVSur.Models.csproj.GenerateResource.cache

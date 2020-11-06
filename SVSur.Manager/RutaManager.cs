@@ -6,10 +6,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlTypes;
 using System.Linq;
 
 namespace SVSur.Manager
 {
+
     public class RutaManager : IRutaManager
     {
 
@@ -24,6 +26,8 @@ namespace SVSur.Manager
 
         public IEnumerable<RutaDTO> GetAllDTO(bool status)
         {
+
+
             using (var context = new ApplicationDbContext())
             {
                 var lista = context.Rutas
@@ -98,6 +102,37 @@ namespace SVSur.Manager
                 context.Entry(obj).State = EntityState.Deleted;
                 return context.SaveChanges();
             }
+        }
+
+
+
+
+        public IEnumerable buscar(string origen)
+        {
+
+
+            using (var context = new ApplicationDbContext())
+            {
+                var lista = context.Rutas
+                    .Where(K => K.CiudadOrigen == origen)
+                    .Select(K => new Ruta
+                    {
+
+                        RutaID = K.RutaID,
+                        CiudadOrigen = K.CiudadOrigen,
+                        CiudadDestino = K.CiudadDestino,
+                        Precio = K.Precio,
+                        Duracion = K.Duracion,
+                        FechaViaje = K.FechaViaje,
+                        HoraSalida = K.HoraSalida,
+
+
+
+                    }).ToList();
+
+                return lista;
+            }
+
         }
 
     }

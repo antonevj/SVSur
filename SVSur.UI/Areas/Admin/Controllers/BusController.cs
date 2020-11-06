@@ -1,4 +1,5 @@
 ﻿using SVSur.Manager;
+using SVSur.Models;
 using SVSur.Models.Domain;
 using SVSur.UI.Commons;
 using System;
@@ -66,6 +67,8 @@ namespace SVSur.UI.Areas.Admin.Controllers
             int rpta = new BusManager().Delete(id);
             return RedirectToAction("Index");
         }
+
+        
 
     }
 }

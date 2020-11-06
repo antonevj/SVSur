@@ -28,16 +28,16 @@ namespace SVSur.Models.Domain
         public float Precio { get; set; }
 
         [Required(ErrorMessage = "El campo Duracion es obligatorio")]
-        [DataType(DataType.Time)]
-        public DateTime Duracion { get; set; }
+       
+        public string Duracion { get; set; }
 
         [Required(ErrorMessage = "El campo Fecha de viaje es obligatorio")]
-        [DataType(DataType.Time)]
-        public DateTime FechaViaje { get; set; }
+        
+        public string FechaViaje { get; set; }
 
         [Required(ErrorMessage = "El campo Hora salida es obligatorio")]
-        [DataType(DataType.Time)]
-        public DateTime HoraSalida { get; set; }
+       
+        public string HoraSalida { get; set; }
 
         [Required]
         public bool Estado { get; set; }

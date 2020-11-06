@@ -87,9 +87,9 @@ namespace SVSur.Models.Migrations
                         CiudadOrigen = c.String(nullable: false, maxLength: 100),
                         CiudadDestino = c.String(nullable: false, maxLength: 100),
                         Precio = c.Single(nullable: false),
-                        Duracion = c.DateTime(nullable: false),
-                        FechaViaje = c.DateTime(nullable: false),
-                        HoraSalida = c.DateTime(nullable: false),
+                        Duracion = c.String(nullable: false),
+                        FechaViaje = c.String(nullable: false),
+                        HoraSalida = c.String(nullable: false),
                         Estado = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.RutaID)

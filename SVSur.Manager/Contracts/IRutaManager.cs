@@ -13,5 +13,6 @@ namespace SVSur.Manager.Contracts
 
         //Funcionalidades especificas
         IEnumerable<RutaDTO> GetAllDTO(bool status);
+        //IEnumerable<RutaDTO> buscar(string searchString);
     }
 }

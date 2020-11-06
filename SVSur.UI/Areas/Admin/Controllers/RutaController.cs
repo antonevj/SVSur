@@ -1,5 +1,7 @@
 ﻿using SVSur.Manager;
+using SVSur.Models;
 using SVSur.Models.Domain;
+using SVSur.Models.DTO;
 using SVSur.UI.Commons;
 using System;
 using System.Collections.Generic;
@@ -85,6 +87,7 @@ namespace SVSur.UI.Areas.Admin.Controllers
 
         public ActionResult Ver(bool estado = true)
         {
+
             ViewBag.estado = estado;
             var data = new RutaManager().GetAllDTO(estado);
             return View(data);
@@ -92,6 +95,6 @@ namespace SVSur.UI.Areas.Admin.Controllers
 
         }
 
-
+        
     }
 }

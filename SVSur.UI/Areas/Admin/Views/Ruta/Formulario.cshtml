@@ -50,7 +50,7 @@
         <div class="col-sm-3">
             <div class="form-group">
                 <label for="Duracion" class="control-label">Duracion: </label>
-                @Html.TextBoxFor(model => model.Duracion, new { @class = "form-control", @Value = Model.Duracion.ToString("H:mm") })
+                @Html.TextBoxFor(model => model.Duracion, new { @class = "form-control", @Value = Model.Duracion })
                 @Html.ValidationMessageFor(model => model.Duracion, null, new { @class = "badge badge-danger" })
             </div>
         </div>
@@ -58,19 +58,19 @@
         <div class="col-sm-3">
             <div class="form-group">
                 <label for="FechaViaje" class="control-label">Fecha Viaje: </label>
-                @Html.TextBoxFor(model => model.FechaViaje, new { @class = "form-control", @Value = Model.FechaViaje.ToString("yyyy/MM/dd") })
+                @Html.TextBoxFor(model => model.FechaViaje, new { @class = "form-control", @Value = Model.FechaViaje })
                 @Html.ValidationMessageFor(model => model.FechaViaje, null, new { @class = "badge badge-danger" })
             </div>
         </div>
         <div class="col-sm-3">
             <div class="form-group">
                 <label for="HoraSalida" class="control-label">Hora Salida: </label>
-                @Html.TextBoxFor(model => model.HoraSalida, new { @class = "form-control", @Value = Model.HoraSalida.ToString("H:mm") })
+                @Html.TextBoxFor(model => model.HoraSalida, new { @class = "form-control", @Value = Model.HoraSalida})
                 @Html.ValidationMessageFor(model => model.HoraSalida, null, new { @class = "badge badge-danger" })
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="form-group">
+            <div class="form-group">|
                 <label for="ChoferID" class="control-label">ChoferID: </label>
                 @Html.DropDownListFor(model => model.ChoferID, (IEnumerable<SelectListItem>)ViewBag.chofer, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ChoferID, null, new { @class = "badge badge-danger" })

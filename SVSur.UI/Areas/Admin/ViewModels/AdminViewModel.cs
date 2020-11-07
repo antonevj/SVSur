@@ -11,7 +11,7 @@ namespace SVSur.UI.Areas.Admin.ViewModels
     {
         public string Id { get; set; }
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "RoleName")]
+        [Display(Name = "Nombre del rol")]
         public string Name { get; set; }
     }
 
@@ -25,7 +25,7 @@ namespace SVSur.UI.Areas.Admin.ViewModels
         public string UserName { get; set; }
 
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "Email")]
+        [Display(Name = "Corrreo electronico")]
         [EmailAddress]
         public string Email { get; set; }
 

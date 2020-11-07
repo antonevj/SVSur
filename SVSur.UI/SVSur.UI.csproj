@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdministratorController.cs" />
+    <Compile Include="Areas\Admin\Controllers\autobusController.cs" />
     <Compile Include="Areas\Admin\Controllers\BusController.cs" />
     <Compile Include="Areas\Admin\Controllers\ChoferController.cs" />
     <Compile Include="Areas\Admin\Controllers\ClienteController.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReservaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -199,7 +201,11 @@
     <Content Include="Assets\css\slick-theme.css" />
     <Content Include="Assets\css\slick.css" />
     <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\img\asiento.png" />
+    <Content Include="Assets\img\asientox.png" />
+    <Content Include="Assets\img\baño.png" />
     <Content Include="Assets\img\cargo.png" />
+    <Content Include="Assets\img\conductor.png" />
     <Content Include="Assets\img\FACEBOOK.png" />
     <Content Include="Assets\img\hotdeal.png" />
     <Content Include="Assets\img\INTA.png" />
@@ -271,6 +277,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Admin\Views\Administrator\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Ruta\Ver.cshtml" />
+    <Content Include="Areas\Admin\Views\autobus\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -320,6 +327,9 @@
     <Content Include="Views\Shared\_LayoutSur.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\ConfirmAccount.cshtml" />
+    <Content Include="Views\Reserva\Ver.cshtml" />
+    <Content Include="Views\Reserva\viajes.cshtml" />
+    <Content Include="Views\Reserva\Formulario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

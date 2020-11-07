@@ -107,20 +107,20 @@ namespace SVSur.Manager
 
 
 
-        public IEnumerable buscar(string origen)
-        {
 
+        public IEnumerable<RutaDTO> buscar( string destino, string origen, string viaje)
+        {
 
             using (var context = new ApplicationDbContext())
             {
                 var lista = context.Rutas
-                    .Where(K => K.CiudadOrigen == origen)
-                    .Select(K => new Ruta
+                    .Where(K => K.CiudadOrigen == origen && K.CiudadDestino==destino && K.FechaViaje==viaje )
+                    .Select(K => new RutaDTO
                     {
 
-                        RutaID = K.RutaID,
+                       
                         CiudadOrigen = K.CiudadOrigen,
-                        CiudadDestino = K.CiudadDestino,
+                        Ciudaddestino = K.CiudadDestino,
                         Precio = K.Precio,
                         Duracion = K.Duracion,
                         FechaViaje = K.FechaViaje,
@@ -132,8 +132,6 @@ namespace SVSur.Manager
 
                 return lista;
             }
-
         }
-
     }
 }

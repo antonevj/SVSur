@@ -1,0 +1,148 @@
+﻿@model IEnumerable<SVSur.Models.DTO.RutaDTO>
+
+
+@{
+    ViewBag.Title = "viajes";
+}
+
+
+
+@using (Html.BeginForm((string)ViewBag.op, "Reserva", FormMethod.Post))
+{
+    @ViewBag.viaje
+
+    <h5>Servicios Disponibles</h5>
+
+    <div class="row space-16">&nbsp;</div>
+
+    <div class="thumbnail">
+        <div class="row">
+            <div class="caption text-center">
+                <h2>HOLA, A DONDE NOS VAMOS?</h2>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="CiudadOrigen" class="control-label">@ViewBag.origen </label>
+                        @*  @Html.DropDownListFor(model => model., (IEnumerable<SelectListItem>)ViewBag.origen, new { @class = "form-control" })*@
+
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="CiudadDestino" class="control-label">@ViewBag.destino </label>
+
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+
+                        <label for="viaje" class="control-label">@ViewBag.viaje </label>
+
+
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+
+                    <div class="form-group">
+                        <label> </label>
+
+                        <button type="submit" class="btn btn-primary form-control">Guardar</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    @*<div class="row">
+            <div class=" caption text-center ">
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="panel panel-default">
+
+
+                        <div class="panel-body">
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="RutaID" class="control-label">ORIGEN </label>
+                                    <p>  @item.CiudadOrigen</p>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="RutaID" class="control-label">DESTINO </label>
+                                    <p>  @item.Ciudaddestino</p>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="RutaID" class="control-label">Hora salida </label>
+                                    <p>  @item.HoraSalida</p>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="RutaID" class="control-label"> fecha de viaje</label>
+                                    <p>  @item.FechaViaje</p>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="RutaID" class="control-label"> Precio</label>
+                                    <p>  @item.Precio</p>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+
+
+                                    @if (Request.IsAuthenticated)
+                                    {
+                                        <button class="btn btn-primary form-control">
+                                            <ul>
+                                                <li><a href="~/Admin/autobus">INGRESAR</a></li>
+
+                                            </ul>
+                                        </button>
+
+                                    }
+                                    else
+                                    {
+
+
+                                        <button class="btn btn-primary form-control">
+                                            <ul>
+                                                <li><a href="~/Account/login">INGRESAR</a></li>
+
+                                            </ul>
+                                        </button>
+
+                                    }
+
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+
+        </div>*@
+}

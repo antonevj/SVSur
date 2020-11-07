@@ -12,9 +12,8 @@ namespace SVSur.UI.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.origen = new SelectList(new RutaManager().GetAllSimple(), "RutaID", "CiudadOrigen");
-            ViewBag.destino = new SelectList(new RutaManager().GetAllSimple(), "RutaID", "CiudadDestino");
-            return View("Index", new Ruta());
+            
+            return View();
 
         }
 
@@ -30,6 +29,7 @@ namespace SVSur.UI.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
-        }
+        } 
+
     }
 }

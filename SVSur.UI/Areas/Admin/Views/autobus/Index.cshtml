@@ -1,0 +1,187 @@
+﻿@model IEnumerable<SVSur.Models.DTO.RutaDTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>seleccionar asiento</h2>
+
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped table-hover">
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr role="row">
+
+                                <th style="width:30%;">@item.CiudadOrigen</th>
+                                <th style="width:30%;">@item.Ciudaddestino</th>
+
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <div class="row" style="border:groove">
+
+            <div class="col-xs-6 col-md-3">
+
+
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/conductor.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+
+                    <img src="~/Assets/img/asiento.png" />
+                </a>
+
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+            </div>
+            <div class="col-xs-3 col-md-3">
+
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/baño.png" />
+
+                </a>
+
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+                <a href="#" class="thumbnail">
+                    <img src="~/Assets/img/asiento.png" />
+
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+
+    </div>
+    <div class="col-sm-5">
+
+
+        <br />
+        <h2>DATOS DE LA COMPRA</h2>
+        <br />
+       
+        <br />
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr role="row">
+                           
+                            <th style="width:25%;">Precio</th>
+                            <th style="width:20%;">Duracion</th>
+                            <th style="width:20%;">FechaViaje</th>
+                            <th style="width:25%;">HoraSalida</th>
+
+
+
+                            <th style="width:10%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                               
+                                <td>@item.Precio</td>
+                                <td>@item.Duracion</td>
+                                <td>@item.FechaViaje</td>
+                                <td>@item.HoraSalida</td>
+
+                               
+                            </tr>
+                        }
+
+                    <tr>
+                        <td>
+
+                            <a href="~/admin/ruta/index" class="btn btn-lg btn-warning">ACEPTAR </a>
+
+                        </td>  
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+     
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+

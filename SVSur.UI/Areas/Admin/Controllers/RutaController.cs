@@ -85,16 +85,26 @@ namespace SVSur.UI.Areas.Admin.Controllers
 
 
 
-        public ActionResult Ver(bool estado = true)
+        //[HttpGet]
+        //public ActionResult Ver()
+        //{
+
+            
+        //    return View();
+
+
+        //}
+
+        //[HttpPost]
+        public ActionResult Ver( bool estado = true)
         {
 
-            ViewBag.estado = estado;
+
             var data = new RutaManager().GetAllDTO(estado);
             return View(data);
 
 
         }
 
-        
     }
 }

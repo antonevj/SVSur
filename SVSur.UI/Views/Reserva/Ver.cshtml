@@ -1,0 +1,74 @@
+﻿@model SVSur.Models.Domain.Ruta
+
+
+
+    @{
+        ViewBag.Title = "Ver";
+    }
+
+    <h2>Ver</h2>
+
+    @using (Html.BeginForm((string)ViewBag.op, "Reserva", FormMethod.Post))
+    {
+        <!--seguridad de los datos-->
+        @Html.AntiForgeryToken()
+
+        if (Model != null)
+        {
+            @Html.HiddenFor(model => model.RutaID)
+        }
+
+
+
+
+        <div class="row space-16">&nbsp;</div>
+
+        <div class="thumbnail">
+            <div class="row">
+                <div class="caption text-center">
+                    <h2>HOLA, A DONDE NOS VAMOS?</h2>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="CiudadOrigen" class="control-label">ORIGEN </label>
+                            @Html.DropDownListFor(model => model.CiudadOrigen, (IEnumerable<SelectListItem>)ViewBag.origen, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CiudadOrigen, null, new { @class = "badge badge-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="CiudadDestino" class="control-label">DESTINO </label>
+                            @Html.DropDownListFor(model => model.CiudadDestino, (IEnumerable<SelectListItem>)ViewBag.destino, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CiudadDestino, null, new { @class = "badge badge-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+
+                            <label for="bday">FECHA DE VIAJE</label>
+                            <input type="date" id="viaje" name="viaje" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                            <span class="validity"></span>
+
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3">
+
+                        <div class="form-group">
+                            <label> </label>
+
+                            <button type="submit" class="btn btn-primary form-control">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    }
+
+
+
+
+
